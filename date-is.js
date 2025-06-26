@@ -1,5 +1,5 @@
 function isValid(date) {
-       if ( date instanceof new Date ){
+       if ( date instanceof new Date() ){
             return !isNaN(date.getTime())
       }
       if (typeof date === 'number') {
@@ -15,7 +15,7 @@ function isBefore(date1,date2) {
 }
 function isFuture(date) {
       const taym = new Date()
-      if ((isValid)&&(isAfter(date,taym))){
+      if ((isValid(date))&&(isAfter(date,taym))){
             return true
       }
       return false
@@ -23,7 +23,7 @@ function isFuture(date) {
 
 function isPast(date) {
       const taym = new Date()
-      if ((isValid)&&(isBefore(date,taym))){
+      if ((isValid(date))&&(isBefore(date,taym))){
             return true
       }
       return false
@@ -32,7 +32,7 @@ function isPast(date) {
 
 
 console.log(
- isFuture(new Date(2046, 6, 10)))
+ isPast(new Date(2014, 6, 2)))
 
 
 
