@@ -1,5 +1,5 @@
 function isValid(date) {
-       if ( date instanceof new Date() ){
+       if ( date instanceof  Date ){
             return !isNaN(date.getTime())
       }
       if (typeof date === 'number') {
@@ -29,10 +29,6 @@ function isPast(date) {
       return false
 }
 
-
-
-console.log(
- isPast(new Date(2014, 6, 2)))
 
 
 
